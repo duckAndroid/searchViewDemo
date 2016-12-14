@@ -59,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem searchItem = menu.findItem(R.id.menu_search);
         // searchItem.expandActionView();
-        android.support.v7.widget.SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        android.support.v7.widget.SearchView searchView = 
+                (SearchView) MenuItemCompat.getActionView(searchItem);
         SearchManager searchManager =
                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         ComponentName componentName = getComponentName();
@@ -78,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String s) {
                 if (s == null || s.length() <= 0)
                     return false;
-                // 点击输入法的搜索按键触发的回调！
-                ToastHelper.show(getApplicationContext(), "文本框改变了.....");
+                // 输入框里面的内容发生改变时的回调
+                ToastHelper.show(getApplicationContext(), "文本框改变了.....");
                 return true;
             }
         });
