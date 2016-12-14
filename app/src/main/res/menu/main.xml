@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    SearchView 获取不到的BUG 原因：
+    属性 actionViewClass 使用的命名空间是android 就为null
+    使用的命名空间为app 就可以正常获取了！
+    app:actionViewClass="android.widget.SearchView"
+    -->
+    <!--
+    为什么 使用 android.support.v7.widget.SearchView
+    而不是 android.widget.SearchView：因为v7的这个效果更直接！
+    -->
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView"/>
+
+    <item
+        android:id="@+id/menu_add"
+        android:title="@string/add"/>
+    <item
+        android:id="@+id/menu_remove"
+        android:title="@string/remove"/>
+</menu>
